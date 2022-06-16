@@ -1,0 +1,89 @@
+{
+    "workbench.sideBar.location": "right",
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#1b1b1b",
+        "editor.background": "#1b1b1b",
+        "terminalCursor.foreground": "#979797bf",
+        "editorCursor.foreground": "#ffffffbf",
+        "editor.lineHighlightBackground": "#6161612c",
+        "editor.wordHighlightBackground": "#54777730",
+        "editorBracketMatch.background": "#ffffff18",
+        "editorBracketMatch.border": "#ffffff0D",
+        "editor.selectionBackground": "#135564",
+        "editor.selectionHighlightBackground": "#13556477",
+        "editor.findMatchBackground": "#21b4b9",
+        "editor.findMatchHighlightBackground": "#21b4b977"
+    },
+    "workbench.colorTheme": "Sonokai Andromeda",
+    "workbench.iconTheme": "vscode-great-icons",
+    "editor.showFoldingControls": "always",
+    "editor.quickSuggestionsDelay": 500,
+    "editor.tabCompletion": "on",
+    "editor.minimap.enabled": true,
+    "editor.fontFamily": "'Roboto Mono', Consolas, 'Courier New', monospace",
+    "editor.fontWeight": "400",
+    "editor.scrollBeyondLastLine": true,
+    "editor.tokenColorCustomizations": {
+        "comments": "#0990ffdc"
+    },
+    "editor.rulers": [
+        80
+    ],
+    "editor.wordWrap": "off",
+    "editor.renderWhitespace": "boundary",
+    "editor.fontSize": 13,
+    "breadcrumbs.enabled": false,
+    "diffEditor.wordWrap": "off",
+    "extensions.ignoreRecommendations": true,
+    "extensions.supportUntrustedWorkspaces": {
+        "ms-vscode.cpptools": {
+            "supported": "limited"
+        },
+        "ms-vscode.cmake-tools": {
+            "supported": "limited"
+        },
+        "twxs.cmake": {
+            "supported": "limited"
+        },
+        "zxh404.vscode-proto3": {
+            "supported": "limited"
+        },
+        "ms-python.python": {
+            "supported": "limited"
+        },
+        "ms-python.vscode-pylance": {
+            "supported": "limited"
+        },
+        "vsciot-vscode.vscode-arduino": {
+            "supported": "limited"
+        }
+    },
+    "python.defaultInterpreterPath": "python",
+    "python.venvFolders": ["venv"],
+    "python.venvPath": ".",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.compilerPath": "g++",
+    "C_Cpp.default.includePath": [
+        "${default}",
+        "${VCPKG_ROOT}/installed/x64-mingw-static/include",
+        "${VULKAN_SDK}/include"
+    ],
+    "cmake.cmakePath": "",
+    "cmake.configureOnOpen": false,
+    "cmake.configureOnEdit": false,
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+    },
+    "cmake.generator": "MinGW Makefiles",
+    "arduino.path": "",
+    "arduino.commandPath": "arduino_debug.exe",
+    "arduino.logLevel": "info",
+    "arduino.enableUSBDetection": false,
+    "arduino.disableTestingOpen": true,
+    "arduino.skipHeaderProvider": true,
+    "arduino.additionalUrls": [
+        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+    ],
+    "arduino.defaultBaudRate": 115200
+}
