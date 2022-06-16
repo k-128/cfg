@@ -83,6 +83,10 @@ function main()
   cp "${PATH_FILES}/.p10k.zsh" ~/
   cp "${PATH_FILES}/.zshrc" ~/
 
+  log_inf "Configuring git..."
+  git config --global alias.s status
+  git config --global alias.logf "log --pretty=format:'%C(auto)%h %ad %cn %s' --graph"
+
   log_inf "Base packages set:"
   log_inf "- To set zsh as default shell, run: chsh -s $(which zsh)"
   log_inf "- To reconfigure powerlevel10k, run: p10k configure"
