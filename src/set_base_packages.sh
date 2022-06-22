@@ -15,10 +15,11 @@ source "${PATH_DIR}/utils.sh"
 LOG_LVL=1
 
 readonly REQ_PKGS=(
-  zsh zsh-syntax-highlighting zsh-autosuggestions git vim tmux rsync htop btop)
+  zsh zsh-syntax-highlighting zsh-autosuggestions git vim tmux rsync htop)
 readonly GIT_P10K="https://github.com/romkatv/powerlevel10k.git"
 readonly GIT_RAW="https://raw.githubusercontent.com"
 readonly GIT_VIMPLUG="${GIT_RAW}/junegunn/vim-plug/master/plug.vim"
+readonly COLORS=(red orange yellow green blue indigo violet grey)
 
 
 function display_help()
@@ -30,8 +31,10 @@ function display_help()
   printf "Packages: ${REQ_PKGS[*]}\n"
   printf "\n"
   printf "Options:\n"
-  printf "\t-h \tDisplay this help message.\n"
-  printf "\t-v \tMore verbose output\n"
+  printf "\t-h \t\tDisplay this help message.\n"
+  printf "\t-v \t\tMore verbose output\n"
+  printf "\t-c \"color\"\tTmux color, options (default: blue):\n"
+  printf "\t\t\t- ${COLORS[*]}"
   printf "\n"
 }
 
@@ -40,8 +43,10 @@ function main()
 {
   # cfg.
   # ---------------------------------------------------------------------------
+  local color="blue"
+
   local OPTIND=1  # Reset getopts OPTIND
-  while getopts ":hv" flag; do
+  while getopts ":hvc:" flag; do
     case "${flag}" in
       h)
         display_help
@@ -51,6 +56,7 @@ function main()
         LOG_LVL=2
         log_dbg "Script path: ${PATH_DIR}/${SCRIPT_NAME}"
         ;;
+      c) color="${OPTARG}" ;;
       *)
         printf "Unsupported option: ${flag}\n\n"
         display_help
@@ -64,7 +70,7 @@ function main()
   printf "\n"
   print_underlined "Setting base packages, fonts and configs..."
   log_inf "Installing ${REQ_PKGS[*]}"
-  install_packages ${REQ_PKGS[@]} || true # Ignore error if missing package
+  install_packages ${REQ_PKGS[@]}
 
   log_inf "Adding fonts..."
   add_font "${PATH_FONTS}/Fira Code Regular Nerd Font Complete Mono.ttf"
@@ -72,7 +78,14 @@ function main()
   add_font "${PATH_FONTS}/Roboto Mono Nerd Font Complete Mono.ttf"
 
   log_inf "Configuring tmux..."
-  cp "${PATH_FILES}/.tmux.conf" ~/
+  cp "${PATH_FILES}/tmux/.tmux.conf" ~/
+  if is_value_in_array COLORS[@] $color; then
+    log_dbg "Appending tmux theming to .tmux.conf, theme: $color"
+    cat ${PATH_FILES}/tmux/.tmux.${color}.conf >> ~/.tmux.conf
+  else
+    log_dbg "Invalid color specified, setting default color: blue"
+    cat ${PATH_FILES}/tmux/.tmux.blue.conf >> ~/.tmux.conf
+  fi
 
   log_inf "Configuring vim..."
   cp "${PATH_FILES}/.vimrc" ~/

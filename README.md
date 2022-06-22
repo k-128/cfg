@@ -3,29 +3,29 @@
 - Config scripts, dotfiles, ...
 
 ```ts
-├── bin
-│   ├── conf
+├── bin/
+│   ├── conf/
 │   │   ├── dhcpcd_routed_ap.conf
 │   │   ├── dnsmasq_routed_ap.conf
 │   │   ├── hostapd_routed_ap.conf
 │   │   └── sysctl_routed_ap.conf
-│   ├── dotfiles
+│   ├── dotfiles/
+│   │   ├── tmux/
 │   │   ├── .p10k.zsh
-│   │   ├── .tmux.conf
 │   │   ├── .vimrc
 │   │   └── .zshrc
-│   ├── fonts
+│   ├── fonts/
 │   │   ├── Fira Code Regular Nerd Font Complete Mono.ttf
 │   │   ├── Fira Code Regular Nerd Font Complete Mono Windows Compatible.ttf
 │   │   ├── Fira Mono Regular Nerd Font Complete Mono.otf
 │   │   ├── Fira Mono Regular Nerd Font Complete Mono Windows Compatible.otf
 │   │   ├── Roboto Mono Nerd Font Complete Mono.ttf
 │   │   └── Roboto Mono Nerd Font Complete Mono Windows Compatible.ttf
-│   └── msft
+│   └── msft/
 │       ├── settings_vscode.json
 │       └── settings_windows_terminal.json
 ├── README.md
-└── src
+└── src/
     ├── set_base_packages.sh
     ├── set_routed_wap.sh
     ├── set_ssh_server.sh
