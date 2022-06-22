@@ -149,10 +149,35 @@ export -f print_underlined
 #######################################
 get_array_value()
 {
-  local -r arr=$1
-  local -r idx=$2
+  local -r arr=("${!1}")
+  local -r idx="$2"
   printf "${arr[$idx]}"
 }
+
+export -f get_array_value
+
+#######################################
+# Check if a value in an array
+# Arguments:
+# - array       : Target array
+# - value       : Value
+# Returns true if value in array
+#######################################
+is_value_in_array()
+{
+  local -r arr=("${!1}")
+  local -r val="$2"
+
+  for v in "${arr[@]}"; do
+    if [[ "${v}" == "${val}" ]]; then
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+export -f is_value_in_array
 
 #######################################
 # Get a cfg file value from a key
@@ -166,6 +191,8 @@ function get_cfg_file_value_from_key()
 {
   sed -rn "s/^${0}=([^\n]+)$/\1/p" "${1}"
 }
+
+export -f get_cfg_file_value_from_key
 
 #######################################
 # Update a cfg file key value, or append if it doesn't exists
@@ -191,6 +218,8 @@ function set_cfg_file_key_value()
   fi
 }
 
+export -f set_cfg_file_key_value
+
 #######################################
 # Look for a package manager and install given packages with it
 # Arguments:
@@ -213,6 +242,8 @@ function install_packages()
   fi
 }
 
+export -f install_packages
+
 #######################################
 # Add given cronjob
 # Arguments:
@@ -233,6 +264,8 @@ function add_cronjob()
   fi
 }
 
+export -f add_cronjob
+
 #######################################
 # Delete duplicate iptable rules
 #######################################
@@ -247,6 +280,8 @@ function delete_duplicate_iptables_rules()
   fi
 }
 
+export -f delete_duplicate_iptables_rules
+
 #######################################
 # Add font
 # Arguments
@@ -258,3 +293,5 @@ function add_font()
   mkdir -p $fonts_path
   cp "$1" $fonts_path
 }
+
+export -f add_font
