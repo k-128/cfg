@@ -15,7 +15,7 @@ source "${PATH_DIR}/utils.sh"
 LOG_LVL=1
 
 readonly REQ_PKGS=(
-  zsh zsh-syntax-highlighting zsh-autosuggestions git vim tmux rsync htop)
+  zsh zsh-syntax-highlighting zsh-autosuggestions git vim tmux rsync htop btop)
 readonly GIT_P10K="https://github.com/romkatv/powerlevel10k.git"
 readonly GIT_RAW="https://raw.githubusercontent.com"
 readonly GIT_VIMPLUG="${GIT_RAW}/junegunn/vim-plug/master/plug.vim"
