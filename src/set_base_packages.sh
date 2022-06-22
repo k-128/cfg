@@ -64,7 +64,7 @@ function main()
   printf "\n"
   print_underlined "Setting base packages, fonts and configs..."
   log_inf "Installing ${REQ_PKGS[*]}"
-  install_packages ${REQ_PKGS[@]}
+  install_packages ${REQ_PKGS[@]} || true # Ignore error if missing package
 
   log_inf "Adding fonts..."
   add_font "${PATH_FONTS}/Fira Code Regular Nerd Font Complete Mono.ttf"
