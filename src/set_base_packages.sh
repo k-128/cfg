@@ -76,6 +76,7 @@ function main()
   add_font "${PATH_FONTS}/Fira Code Regular Nerd Font Complete Mono.ttf"
   add_font "${PATH_FONTS}/Fira Mono Regular Nerd Font Complete Mono.otf"
   add_font "${PATH_FONTS}/Roboto Mono Nerd Font Complete Mono.ttf"
+  add_font "${PATH_FONTS}/Terminess (TTF) Nerd Font Complete Mono.ttf"
 
   log_inf "Configuring tmux..."
   cp "${PATH_FILES}/tmux/.tmux.conf" ~/
