@@ -38,8 +38,8 @@ function display_help()
   printf "\t-z \t\tAdd: zsh, zsh-autosuggestions, zsh-syntax-highlighting\n"
   printf "\t-f \t\tFull, add:\n"
   printf "\t   \t\t- vim plugins\n"
-  # printf "\t   \t\t- tmux plugins\n"
   printf "\t   \t\t- zsh, zsh-autosuggestions, zsh-syntax-highlighting, p10k\n"
+  printf "\t-t \t\tAdd tmux plugins: tpm, tmux-resurrect, tmux-continuum\n"
   printf "\t-c \"color\"\tTmux color, options (default: blue):\n"
   printf "\t   \t\t- ${COLORS[*]}"
   printf "\n"
@@ -54,9 +54,10 @@ function main()
   local path_tmux_color="${PATH_FILES}/tmux/.tmux.blue.conf"
   local pkgs=("${PKGS_REQ[@]}")
   local is_full=""
+  local is_tmux_plugins=""
 
   local OPTIND=1  # Reset getopts OPTIND
-  while getopts ":hvzfc:" flag; do
+  while getopts ":hvzftc:" flag; do
     case "${flag}" in
       h)
         display_help
@@ -71,6 +72,7 @@ function main()
         pkgs=("${PKGS_REQ[@]}" "${PKGS_ZSH[@]}")
         is_full=1
         ;;
+      t) is_tmux_plugins=1 ;;
       c) color="${OPTARG}" ;;
       *)
         log_err "Unsupported option: ${flag}\n"
@@ -144,16 +146,16 @@ function main()
           cp "${PATH_FILES}/tmux/.tmux.conf" ~/
           cat $path_tmux_color >> ~/.tmux.conf
 
-          # if [[ -n "${is_full}" ]]; then
-          #   if is_cmd_set "git"; then
-          #     git clone --depth=1 $URL_TMUX_PLUG \
-          #       ~/.tmux/plugins/tpm &>/dev/null || true
-          #     cat "${PATH_FILES}/tmux/.tmux.plugins.conf" >> ~/.tmux.conf
-          #     log_inf "  + tmux plugins set"
-          #   else
-          #     log_inf "  + tmux plugins not set: 'git' not found (required)"
-          #   fi
-          # fi
+          if [[ -n "${is_tmux_plugins}" ]]; then
+            if is_cmd_set "git"; then
+              git clone --depth=1 $URL_TMUX_PLUG \
+                ~/.tmux/plugins/tpm &>/dev/null || true
+              cat "${PATH_FILES}/tmux/.tmux.plugins.conf" >> ~/.tmux.conf
+              log_inf "  + tmux plugins set"
+            else
+              log_inf "  + tmux plugins not set: 'git' not found (required)"
+            fi
+          fi
         else
           log_inf "[ ] tmux: not found"
         fi
