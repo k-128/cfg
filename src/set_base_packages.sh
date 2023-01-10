@@ -28,10 +28,7 @@ readonly COLORS=(red orange yellow green blue indigo violet grey)
 function display_help()
 {
   print_underlined "Help"
-  printf "Set base packages, configs and fonts.\n"
-  printf "\n"
-  printf "Packages: (${PKGS_REQ[*]})\n"
-  printf "\n"
+  printf "Set fonts, configs and packages (${PKGS_REQ[*]})\n"
   printf "Options:\n"
   printf "\t-h \t\tDisplay this help message.\n"
   printf "\t-v \t\tMore verbose output\n"

@@ -47,7 +47,7 @@
 <br />
 
 *./src/set_base_packages.sh*
-- Set base packages, fonts and configs
+- Set fonts, configs and packages
 
 <br />
 

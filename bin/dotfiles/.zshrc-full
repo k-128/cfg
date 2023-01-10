@@ -174,6 +174,6 @@ fi
 # - To cfg: `p10k configure` or edit ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-POWERLEVEL9K_DISABLE_GITSTATUS=true                 # Disable gitstatusd
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('context' 'dir') # rm 'os_icon' and 'vcs'
-ZLE_RPROMPT_INDENT=0                                # rm right side space
+POWERLEVEL9K_DISABLE_GITSTATUS=true       # Disable gitstatusd
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('dir') # rm 'os_icon' 'context' 'vcs'
+ZLE_RPROMPT_INDENT=0                      # rm right side space

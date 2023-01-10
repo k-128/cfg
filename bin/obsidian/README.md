@@ -1,8 +1,6 @@
 ### Obsidian.md
 ---
 
-<br />
-
 ##### Setup
 - Releases: [g: obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases/releases/)
 
