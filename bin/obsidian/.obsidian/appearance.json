@@ -1,0 +1,13 @@
+{
+  "accentColor": "#2196f3",
+  "theme": "obsidian",
+  "showViewHeader": false,
+  "nativeMenus": false,
+  "interfaceFontFamily": "Share Tech Mono",
+  "textFontFamily": "Source Code Pro",
+  "monospaceFontFamily": "FiraCode Nerd Font Mono",
+  "baseFontSize": 14,
+  "enabledCssSnippets": [
+    "readable-lign-length-left-align"
+  ]
+}

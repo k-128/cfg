@@ -1,0 +1,19 @@
+{
+  "showLineNumber": true,
+  "showInlineTitle": false,
+  "vimMode": false,
+  "smartIndentList": true,
+  "tabSize": 2,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "autoConvertHtml": false,
+  "showFrontmatter": true,
+  "promptDelete": false,
+  "trashOption": "local",
+  "useTab": false
+}

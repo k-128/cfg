@@ -27,9 +27,10 @@
 │   │   ├── SourceCodePro-Medium.ttf
 │   │   ├── Terminess (TTF) Nerd Font Complete Mono Windows Compatible.ttf
 │   │   └── Terminess (TTF) Nerd Font Complete Mono.ttf
-│   └── msft/
-│       ├── settings_vscode.json
-│       └── settings_windows_terminal.json
+│   │   msft/
+│   │   ├── settings_vscode.json
+│   │   └── settings_windows_terminal.json
+│   └── obsidian/
 ├── README.md
 └── src/
     ├── set_base_packages.sh
