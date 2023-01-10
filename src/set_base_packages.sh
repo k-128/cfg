@@ -14,39 +14,49 @@ readonly PATH_FONTS="${PATH_DIR}/../bin/fonts"
 source "${PATH_DIR}/utils.sh"
 LOG_LVL=1
 
-readonly REQ_PKGS=(
-  zsh zsh-syntax-highlighting zsh-autosuggestions git vim tmux rsync htop curl)
-readonly GIT_P10K="https://github.com/romkatv/powerlevel10k.git"
-readonly GIT_RAW="https://raw.githubusercontent.com"
-readonly GIT_VIMPLUG="${GIT_RAW}/junegunn/vim-plug/master/plug.vim"
+readonly PKGS_REQ=(git vim tmux rsync htop curl)
+readonly PKGS_ZSH=(zsh)
+readonly URL_GITHUB_RAW="https://raw.githubusercontent.com"
+readonly URL_VIM_PLUG="${URL_GITHUB_RAW}/junegunn/vim-plug/master/plug.vim"
+readonly URL_TMUX_PLUG="https://github.com/tmux-plugins/tpm.git"
+readonly URL_ZSH_AS="https://github.com/zsh-users/zsh-autosuggestions.git"
+readonly URL_ZSH_SH="https://github.com/zsh-users/zsh-syntax-highlighting.git"
+readonly URL_P10K="https://github.com/romkatv/powerlevel10k.git"
 readonly COLORS=(red orange yellow green blue indigo violet grey)
 
 
 function display_help()
 {
-  printf "\n"
   print_underlined "Help"
-  printf "Set base packages, fonts and configs.\n"
+  printf "Set base packages, configs and fonts.\n"
   printf "\n"
-  printf "Packages: ${REQ_PKGS[*]}\n"
+  printf "Packages: (${PKGS_REQ[*]})\n"
   printf "\n"
   printf "Options:\n"
   printf "\t-h \t\tDisplay this help message.\n"
   printf "\t-v \t\tMore verbose output\n"
+  printf "\t-z \t\tAdd: zsh, zsh-autosuggestions, zsh-syntax-highlighting\n"
+  printf "\t-f \t\tFull, add:\n"
+  printf "\t   \t\t- vim plugins\n"
+  printf "\t   \t\t- tmux plugins\n"
+  printf "\t   \t\t- zsh, zsh-autosuggestions, zsh-syntax-highlighting, p10k\n"
   printf "\t-c \"color\"\tTmux color, options (default: blue):\n"
-  printf "\t\t\t- ${COLORS[*]}"
+  printf "\t   \t\t- ${COLORS[*]}"
   printf "\n"
 }
 
 
 function main()
 {
-  # cfg.
+  # cfg
   # ---------------------------------------------------------------------------
   local color="blue"
+  local path_tmux_color="${PATH_FILES}/tmux/.tmux.blue.conf"
+  local pkgs=("${PKGS_REQ[@]}")
+  local is_full=""
 
   local OPTIND=1  # Reset getopts OPTIND
-  while getopts ":hvc:" flag; do
+  while getopts ":hvzfc:" flag; do
     case "${flag}" in
       h)
         display_help
@@ -54,57 +64,156 @@ function main()
         ;;
       v)
         LOG_LVL=2
-        log_dbg "Script path: ${PATH_DIR}/${SCRIPT_NAME}"
+        log_dbg "Script location: ${PATH_DIR}/${SCRIPT_NAME}"
+        ;;
+      z) pkgs=("${PKGS_REQ[@]}" "${PKGS_ZSH[@]}") ;;
+      f)
+        pkgs=("${PKGS_REQ[@]}" "${PKGS_ZSH[@]}")
+        is_full=1
         ;;
       c) color="${OPTARG}" ;;
       *)
-        printf "Unsupported option: ${flag}\n\n"
+        log_err "Unsupported option: ${flag}\n"
         display_help
         exit 1
         ;;
     esac
   done
 
-  # exec.
-  # ---------------------------------------------------------------------------
-  printf "\n"
-  print_underlined "Setting base packages, fonts and configs..."
-  log_inf "Installing ${REQ_PKGS[*]}"
-  install_packages ${REQ_PKGS[@]}
+  if is_value_in_array COLORS[@] "${color}"; then
+    path_tmux_color="${PATH_FILES}/tmux/.tmux.${color}.conf"
+  else
+    log_dbg "-c: Unsupported color: ${color}, using default: blue"
+  fi
 
+  # exec
+  # ---------------------------------------------------------------------------
+  print_underlined "Setting fonts, packages and configs"
+
+  # Fonts
   log_inf "Adding fonts..."
   add_font "${PATH_FONTS}/Fira Code Regular Nerd Font Complete Mono.ttf"
   add_font "${PATH_FONTS}/Fira Mono Regular Nerd Font Complete Mono.otf"
   add_font "${PATH_FONTS}/Roboto Mono Nerd Font Complete Mono.ttf"
+  add_font "${PATH_FONTS}/ShareTechMono-Regular.ttf"
+  add_font "${PATH_FONTS}/SourceCodePro-Medium.ttf"
   add_font "${PATH_FONTS}/Terminess (TTF) Nerd Font Complete Mono.ttf"
 
-  log_inf "Configuring tmux..."
-  cp "${PATH_FILES}/tmux/.tmux.conf" ~/
-  if is_value_in_array COLORS[@] $color; then
-    log_dbg "Appending tmux theming to .tmux.conf, theme: $color"
-    cat ${PATH_FILES}/tmux/.tmux.${color}.conf >> ~/.tmux.conf
-  else
-    log_dbg "Invalid color specified, setting default color: blue"
-    cat ${PATH_FILES}/tmux/.tmux.blue.conf >> ~/.tmux.conf
+  log_inf "Installing: (${pkgs[*]})..."
+  if ! install_packages ${pkgs[@]}; then
+    log_err "Error(s) installing package(s)"
   fi
 
-  log_inf "Configuring vim..."
-  cp "${PATH_FILES}/.vimrc" ~/
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs $GIT_VIMPLUG &>/dev/null
+  log_inf "Checking & configuring packages..."
+  for pkg in "${pkgs[@]}"; do
+    case "${pkg}" in
+      git)
+        if is_cmd_set "git"; then
+          log_inf "[x] git"
+          git config --global alias.s status
+          git config --global alias.logf \
+            "log --pretty=format:'%C(auto)%h %ad %cn %s' --graph"
+        else
+          log_inf "[ ] git: not found"
+        fi
+        ;;
+      vim)
+        if is_cmd_set "vim"; then
+          log_inf "[x] vim"
 
-  log_inf "Configuring zsh..."
-  git clone --depth=1 $GIT_P10K ~/powerlevel10k &>/dev/null || true
-  cp "${PATH_FILES}/.p10k.zsh" ~/
-  cp "${PATH_FILES}/.zshrc" ~/
+          if [[ -z "${is_full}" ]]; then
+            cp "${PATH_FILES}/.vimrc" ~/
+          else
+            if is_cmd_set "curl"; then
+              curl -fLo ~/.vim/autoload/plug.vim --create-dirs $URL_VIM_PLUG \
+                &>/dev/null
+              cp "${PATH_FILES}/.vimrc-full" ~/.vimrc
+              log_inf "  + vim plugins set, to install, in vim: :PlugInstall"
+            else
+              cp "${PATH_FILES}/.vimrc" ~/
+              log_inf "  + vim plugins not set: 'curl' not found (required)"
+            fi
+          fi
+        else
+          log_inf "[ ] vim: not found"
+        fi
+        ;;
+      tmux)
+        if is_cmd_set "tmux"; then
+          log_inf "[x] tmux"
+          cp "${PATH_FILES}/tmux/.tmux.conf" ~/
+          cat $path_tmux_color >> ~/.tmux.conf
 
-  log_inf "Configuring git..."
-  git config --global alias.s status
-  git config --global alias.logf "log --pretty=format:'%C(auto)%h %ad %cn %s' --graph"
+          if [[ -n "${is_full}" ]]; then
+            if is_cmd_set "git"; then
+              git clone --depth=1 $URL_TMUX_PLUG \
+                ~/.tmux/plugins/tpm &>/dev/null || true
+              cat "${PATH_FILES}/tmux/.tmux.plugins.conf" >> ~/.tmux.conf
+              log_inf "  + tmux plugins set"
+            else
+              log_inf "  + tmux plugins not set: 'git' not found (required)"
+            fi
+          fi
+        else
+          log_inf "[ ] tmux: not found"
+        fi
+        ;;
+      rsync)
+        if is_cmd_set "rsync"; then
+          log_inf "[x] rsync"
+        else
+          log_inf "[ ] rsync: not found"
+        fi
+        ;;
+      htop)
+        if is_cmd_set "htop"; then
+          log_inf "[x] htop"
+        else
+          log_inf "[ ] htop: not found"
+        fi
+        ;;
+      curl)
+        if is_cmd_set "curl"; then
+          log_inf "[x] curl"
+        else
+          log_inf "[ ] curl: not found"
+        fi
+        ;;
+      zsh)
+        if is_cmd_set "zsh"; then
+          log_inf "[x] zsh"
+          log_inf "  + to set as default shell: chsh -s /usr/bin/zsh"
 
-  log_inf "Base packages set:"
-  log_inf "- To set zsh as default shell, run: chsh -s $(which zsh)"
-  log_inf "- To reconfigure powerlevel10k, run: p10k configure"
-  log_inf "- To set vim plugs, start vim and call: :PlugInstall"
+          if is_cmd_set "git"; then
+            git clone --depth=1 $URL_ZSH_AS \
+              ~/.zsh/zsh-autosuggestions &>/dev/null || true
+            log_inf "  + zsh-autosuggestions set"
+
+            git clone --depth=1 $URL_ZSH_SH \
+              ~/.zsh/zsh-syntax-highlighting &>/dev/null || true
+            log_inf "  + zsh-syntax-highlighting set"
+
+            if [[ -z "${is_full}" ]]; then
+              cp "${PATH_FILES}/.zshrc" ~/
+            else
+              git clone --depth=1 $URL_P10K ~/powerlevel10k &>/dev/null || true
+              cp "${PATH_FILES}/.zshrc-full" ~/.zshrc
+              # cp "${PATH_FILES}/.p10k.zsh" ~/
+              log_inf "  + p10k set, to cfg: p10k configure"
+            fi
+          else
+            cp "${PATH_FILES}/.zshrc" ~/
+            log_inf "  + zsh plugins not set: 'git' not found (required)"
+          fi
+        else
+          log_inf "[ ] zsh: not found"
+        fi
+        ;;
+      *) log_dbg "Unexpected package: ${pkg}" ;;
+    esac
+  done
+
+  log_inf "Done."
 }
 
 main "$@"

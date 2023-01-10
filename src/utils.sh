@@ -232,13 +232,14 @@ function install_packages()
   elif [[ -x "$(command -v apt)" ]]; then
     sudo apt install -yq $@ &>/dev/null
   elif [[ -x "$(command -v dnf)" ]]; then
-    sudo dnf install -yq $@ &>/dev/null
+    sudo dnf install -yq --skip-broken $@ &>/dev/null
   elif [[ -x "$(command -v yum)" ]]; then
-    sudo yum install -y $@ &>/dev/null
+    sudo yum install -y --skip-broken $@ &>/dev/null
   elif [[ -x "$(command -v pacman)" ]]; then
     sudo pacman --noconfirm -S $@ &>/dev/null
   else
-    printf "Package manager not found, manual installation required.\n"
+    printf "[ERR]: Package manager not found.\n" >&2
+    return 1
   fi
 }
 
@@ -295,3 +296,19 @@ function add_font()
 }
 
 export -f add_font
+
+#######################################
+# Check if a command exist
+# Arguments
+# - cmd         : Command to check
+#######################################
+function is_cmd_set()
+{
+  if ! type "$1" &>/dev/null; then
+    printf "[ERR]: command not found: $1\n" >&2
+    return 1
+  fi
+  return 0
+}
+
+export -f is_cmd_set

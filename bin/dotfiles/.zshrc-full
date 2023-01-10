@@ -1,3 +1,13 @@
+# Enable Powerlevel10k instant prompt.
+# - Should stay close to the top of ~/.zshrc.
+# - Initialization code that may require console input (password prompts, [y/n]
+#   confirmations, etc.) must go above this block; everything else below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]];
+then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # Zsh
 # - https://zsh.sourceforge.io/Doc/Release/Options.html
 # - https://zsh.sourceforge.io/Doc/Release/Options-Index.html
@@ -159,3 +169,11 @@ if [[ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
   ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
 fi
+
+# PowerLevel10k (github.com/romkatv/powerlevel10k)
+# - To cfg: `p10k configure` or edit ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+POWERLEVEL9K_DISABLE_GITSTATUS=true                 # Disable gitstatusd
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('context' 'dir') # rm 'os_icon' and 'vcs'
+ZLE_RPROMPT_INDENT=0                                # rm right side space
