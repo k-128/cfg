@@ -38,7 +38,7 @@ function display_help()
   printf "\t-z \t\tAdd: zsh, zsh-autosuggestions, zsh-syntax-highlighting\n"
   printf "\t-f \t\tFull, add:\n"
   printf "\t   \t\t- vim plugins\n"
-  printf "\t   \t\t- tmux plugins\n"
+  # printf "\t   \t\t- tmux plugins\n"
   printf "\t   \t\t- zsh, zsh-autosuggestions, zsh-syntax-highlighting, p10k\n"
   printf "\t-c \"color\"\tTmux color, options (default: blue):\n"
   printf "\t   \t\t- ${COLORS[*]}"
@@ -144,16 +144,16 @@ function main()
           cp "${PATH_FILES}/tmux/.tmux.conf" ~/
           cat $path_tmux_color >> ~/.tmux.conf
 
-          if [[ -n "${is_full}" ]]; then
-            if is_cmd_set "git"; then
-              git clone --depth=1 $URL_TMUX_PLUG \
-                ~/.tmux/plugins/tpm &>/dev/null || true
-              cat "${PATH_FILES}/tmux/.tmux.plugins.conf" >> ~/.tmux.conf
-              log_inf "  + tmux plugins set"
-            else
-              log_inf "  + tmux plugins not set: 'git' not found (required)"
-            fi
-          fi
+          # if [[ -n "${is_full}" ]]; then
+          #   if is_cmd_set "git"; then
+          #     git clone --depth=1 $URL_TMUX_PLUG \
+          #       ~/.tmux/plugins/tpm &>/dev/null || true
+          #     cat "${PATH_FILES}/tmux/.tmux.plugins.conf" >> ~/.tmux.conf
+          #     log_inf "  + tmux plugins set"
+          #   else
+          #     log_inf "  + tmux plugins not set: 'git' not found (required)"
+          #   fi
+          # fi
         else
           log_inf "[ ] tmux: not found"
         fi
@@ -198,7 +198,7 @@ function main()
             else
               git clone --depth=1 $URL_P10K ~/powerlevel10k &>/dev/null || true
               cp "${PATH_FILES}/.zshrc-full" ~/.zshrc
-              # cp "${PATH_FILES}/.p10k.zsh" ~/
+              cp "${PATH_FILES}/.p10k.zsh" ~/
               log_inf "  + p10k set, to cfg: p10k configure"
             fi
           else
