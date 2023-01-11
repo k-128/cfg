@@ -4,7 +4,7 @@
 # - https://zsh-manual.netlify.app/the-z-shell-manual
 # -----------------------------------------------------------------------------
 setopt AUTO_CD              # Try to cd into non executable commands entered
-setopt CORRECT              # Try to correct the spelling of commands
+#setopt CORRECT             # Ask to correct the spelling of commands
 setopt INTERACTIVE_COMMENTS # Allow comments in interactive shell
 setopt NO_NOMATCH           # Hide error msg on unmatched filename gen. pattern
 setopt NOTIFY               # Report the status of background jobs immediately
