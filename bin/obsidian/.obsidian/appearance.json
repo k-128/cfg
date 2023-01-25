@@ -8,6 +8,8 @@
   "monospaceFontFamily": "FiraCode Nerd Font Mono",
   "baseFontSize": 14,
   "enabledCssSnippets": [
-    "readable-lign-length-left-align"
+    "readable-lign-length-left-align",
+    "img-center",
+    "img-bg-grey"
   ]
 }

@@ -42,7 +42,8 @@ flatpak run md.obsidian.Obsidian
 <br />
 
 ##### Usage
-- Display images: `![({name})|({width})]({filepath})`
+- Display images: `![({name})|({alt})|({width})]({filepath})`, ex:
+  - `![| center, bg-grey | 480](./assets/file.svg)` (with local css snippets)
 - Tag (for searches, graph view): #tag, #tag/nested, or at the top of a file:
 
 ```yaml
