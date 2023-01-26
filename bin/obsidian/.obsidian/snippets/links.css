@@ -1,0 +1,20 @@
+.internal-link {
+  text-decoration: none !important;
+}
+
+.cm-underline {
+  text-decoration: none !important;
+}
+
+.external-link {
+  text-decoration: none;
+
+  /* Hide little square with arrow shown next to external link in Preview */
+  background-image: none;
+  padding: 0;
+}
+
+/* Change unresolved links opacity */
+.markdown-preview-view .internal-link.is-unresolved {
+  opacity: 0.8;
+}

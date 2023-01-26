@@ -10,6 +10,7 @@
   "enabledCssSnippets": [
     "readable-lign-length-left-align",
     "img-center",
-    "img-bg-grey"
+    "img-bg-grey",
+    "links"
   ]
 }
