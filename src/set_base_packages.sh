@@ -93,6 +93,7 @@ function main()
   log_inf "Adding fonts..."
   add_font "${PATH_FONTS}/Fira Code Regular Nerd Font Complete Mono.ttf"
   add_font "${PATH_FONTS}/Fira Mono Regular Nerd Font Complete Mono.otf"
+  add_font "${PATH_FONTS}/JetBrains Mono Nerd Font Complete Mono Regular.ttf"
   add_font "${PATH_FONTS}/Roboto Mono Nerd Font Complete Mono.ttf"
   add_font "${PATH_FONTS}/ShareTechMono-Regular.ttf"
   add_font "${PATH_FONTS}/SourceCodePro-Medium.ttf"
