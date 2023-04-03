@@ -17,16 +17,6 @@
 │   │   ├── .zshrc
 │   │   └── .zshrc-full
 │   ├── fonts/
-│   │   ├── Fira Code Regular Nerd Font Complete Mono.ttf
-│   │   ├── Fira Code Regular Nerd Font Complete Mono Windows Compatible.ttf
-│   │   ├── Fira Mono Regular Nerd Font Complete Mono.otf
-│   │   ├── Fira Mono Regular Nerd Font Complete Mono Windows Compatible.otf
-│   │   ├── Roboto Mono Nerd Font Complete Mono.ttf
-│   │   ├── Roboto Mono Nerd Font Complete Mono Windows Compatible.ttf
-│   │   ├── ShareTechMono-Regular.ttf
-│   │   ├── SourceCodePro-Medium.ttf
-│   │   ├── Terminess (TTF) Nerd Font Complete Mono Windows Compatible.ttf
-│   │   └── Terminess (TTF) Nerd Font Complete Mono.ttf
 │   │   msft/
 │   │   ├── settings_vscode.json
 │   │   └── settings_windows_terminal.json
