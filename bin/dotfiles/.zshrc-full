@@ -177,3 +177,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 POWERLEVEL9K_DISABLE_GITSTATUS=true       # Disable gitstatusd
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('dir') # rm 'os_icon' 'context' 'vcs'
 ZLE_RPROMPT_INDENT=0                      # rm right side space
+
+# nvm (https://github.com/nvm-sh/nvm)
+# - To install: github.com/nvm-sh/nvm/blob/master/install.sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ]
+  && printf %s "${HOME}/.nvm"
+  || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # Load nvm
