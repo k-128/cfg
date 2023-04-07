@@ -107,7 +107,7 @@ function main()
           log_inf "[x] git"
           git config --global alias.s status
           git config --global alias.logf \
-            "log --pretty=format:'%C(auto)%h %ad %cn %s' --graph"
+            "log --pretty=format:'%C(auto)%h %ai %cn %s' --graph"
         else
           log_inf "[ ] git: not found"
         fi
