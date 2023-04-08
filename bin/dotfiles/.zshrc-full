@@ -29,6 +29,7 @@ export PROMPT_EOL_MARK=""   # Hide End Of Line sign: '%'
 bindkey -e                                      # Emacs key bindings
 bindkey ' ' magic-space                         # On space: history expansion
 bindkey '^U' backward-kill-line                 # Ctrl + U
+bindkey '^H' backward-kill-word                 # Ctrl + Backspace
 bindkey '^[[3;5~' kill-word                     # Ctrl + Del
 bindkey '^[[3~' delete-char                     # Del
 bindkey '^[[1;5C' forward-word                  # Ctrl + right-arrow
