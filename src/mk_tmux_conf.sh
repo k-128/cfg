@@ -35,6 +35,7 @@ function display_help()
   printf "Examples:\n"
   printf "\t${PATH_DIR}/${SCRIPT_NAME} -p '#2196f3' -s '#64b5f6'\n"
   printf "\t${PATH_DIR}/${SCRIPT_NAME} -o ~/.tmux.conf -p 'colour208' -s '#ffaf00'\n"
+  printf "\t${PATH_DIR}/${SCRIPT_NAME} -o ~/.tmux.conf -p 'colour160' -s '#f44336'\n"
   printf "\n"
 }
 
