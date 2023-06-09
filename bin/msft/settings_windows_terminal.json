@@ -1,70 +1,75 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    // https://learn.microsoft.com/en-us/windows/terminal/customize-settings/actions/
+    "actions":
     [
-        // Freed up key bindings
-        {"command": null, "keys": ["alt+shift+left"]},
-        {"command": null, "keys": ["alt+shift+up"]},
-        {"command": null, "keys": ["alt+shift+right"]},
-        {"command": null, "keys": ["alt+shift+down"]},
+        // Removed keybindings
+        {"command": "unbound", "keys": "alt+shift+left"},
+        {"command": "unbound", "keys": "alt+shift+up"},
+        {"command": "unbound", "keys": "alt+shift+right"},
+        {"command": "unbound", "keys": "alt+shift+down"},
+        // Keybindings
+        {"command": "find", "keys": "ctrl+shift+f"},
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "nextTab"
             },
             "keys": "ctrl+pgdn"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab"
             },
             "keys": "ctrl+pgup"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
         }
     ],
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-    "launchMode": "default",
-    "profiles": 
+    "copyOnSelect": false,               // Set normal copy
+    "copyFormatting": "none",            // ...
+    "alwaysShowTabs": false,             // Show tabs only when more than one exist
+    "showTabsInTitlebar": false,         // ...
+    "disableAnimations": false,          // Unset animations
+    "alwaysShowNotificationIcon": false, // Unset system tray icon
+    "minimizeToNotificationArea": false, // ...
+    "launchMode": "default",                                    // Startup
+    "defaultProfile": "{272ebc39-7e55-427a-8af7-d350d7a818ad}", // ...
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
-            "antialiasingMode": "cleartype",
-            "backgroundImage": "desktopWallpaper",
-            "backgroundImageOpacity": 0.14999999999999999,
-            "bellStyle": "none",
-            "colorScheme": "Dark+",
-            "cursorHeight": 25,
-            "cursorShape": "underscore",
-            "experimental.retroTerminalEffect": false,
-            "font": 
+            "startingDirectory": ".",
+            "historySize": 9001,
+            "font":
             {
                 "face": "FiraCode NF",
-                "size": 10,
-                "weight": "medium"
+                "size": 10.0
             },
-            "opacity": 0,
+            "antialiasingMode": "cleartype",
             "padding": "8, 8, 8, 0",
-            "startingDirectory": ".",
-            "useAcrylic": true
+            "bellStyle": "none",
+            "cursorHeight": 25,
+            "cursorShape": "underscore",
+            "colorScheme": "Dark+",
+            "experimental.retroTerminalEffect": false,
+            // "useAcrylic": true, // Requires Transparency effects: 1
+            // "opacity": 50,      // ...
+            "backgroundImage": "desktopWallpaper",
+            "backgroundImageOpacity": 0.15
         },
-        "list": 
+        "list":
         [
+            // To generate GUIDs, pwsh: `[guid]::NewGuid().Guid`
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -82,17 +87,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "colorScheme": "Dark+",
-                "font": 
-                {
-                    "face": "FiraMono NF"
-                },
-                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-                "hidden": false,
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "guid": "{55c266a9-c27a-51fd-a3f8-401184fcd444}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
@@ -103,10 +97,51 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "name": "Wsl",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "~",
+                "scrollbarState": "hidden"
+            },
+            {
+                "guid": "{272ebc39-7e55-427a-8af7-d350d7a818ad}",
+                "hidden": false,
+                "name": "pwsh",
+                "commandline": "pwsh",
+                "icon": "{path_to_pwsh}/assets/Square44x44Logo.png"
+            },
+            {
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "hidden": false,
+                "name": "MSYS2/MSYS",
+                "commandline": "{path_to_msys64}/msys2_shell.cmd -defterm -here -no-start -msys",
+                "startingDirectory": "{path_to_msys64}/home/%USERNAME%",
+                "icon": "{path_to_msys64}/msys2.ico"
+            },
+            {
+                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+                "hidden": false,
+                "name": "MSYS2/UCRT64",
+                "commandline": "{path_to_msys64}/msys2_shell.cmd -defterm -here -no-start -ucrt64",
+                "startingDirectory": "{path_to_msys64}/home/%USERNAME%",
+                "icon": "{path_to_msys64}/ucrt64.ico"
+            },
+            {
+                "guid": "{ab7cd0fd-98b4-485e-9271-50384fc29306}",
+                "hidden": false,
+                "name": "MSYS2/MINGW64",
+                "commandline": "{path_to_msys64}/msys2_shell.cmd -defterm -here -no-start -mingw64",
+                "startingDirectory": "{path_to_msys64}/home/%USERNAME%",
+                "icon": "{path_to_msys64}/mingw64.ico"
             }
         ]
     },
-    "schemes": 
+    "themes": [],
+    "useAcrylicInTabRow": true,
+    "schemes":
     [
         {
             "background": "#0C0C0C",
