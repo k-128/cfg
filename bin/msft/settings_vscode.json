@@ -1,124 +1,121 @@
 {
+    "telemetry.telemetryLevel": "off",
+
+    // SECURITY
+    // ------------------------------------------------------------------------
     "security.workspace.trust.enabled": true,
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.startupPrompt": "never",
     "security.workspace.trust.emptyWindow": false,
     "security.workspace.trust.untrustedFiles": "newWindow",
-    "extensions.autoUpdate": false,
-    "extensions.autoCheckUpdates": true,
-    "workbench.colorCustomizations": {
-        "sideBar.background": "#212121",
-        "sideBar.border": "#2d2d2d",
-        "editorBracketMatch.background": "#ffffff18",
-        "editorBracketMatch.border": "#ffffff0D",
-        "editor.background": "#1b1b1b",
-        "editor.selectionBackground": "#135564",
-        "editor.selectionHighlightBackground": "#13556477",
-        "editor.lineHighlightBackground": "#6161612c",
-        "editor.wordHighlightBackground": "#54777730",
-        "editor.findMatchBackground": "#21b4b9",
-        "editor.findMatchHighlightBackground": "#21b4b977",
-        "editorCursor.foreground": "#ffffffbf",
-        "terminalCursor.foreground": "#979797bf",
-        "notebook.cellBorderColor": "#3D3D3D",
-        "notebook.cellEditorBackground": "#282828",
-        "notebook.cellHoverBackground": "#212121",
-        "notebook.cellInsertionIndicator": "#4A4A4A",
-        "notebook.cellStatusBarItemHoverBackground": "#212121",
-        "notebook.cellToolbarSeparator": "#3D3D3D",
-        "notebook.editorBackground": "#1b1b1b",
-        "notebook.focusedCellBackground": "#212121",
-        "notebook.focusedCellBorder": "#4A4A4A",
-        "notebook.focusedEditorBorder": "#212121",
-        "notebook.inactiveFocusedCellBorder": "#282828",
-        // "notebook.inactiveSelectedCellBorder": "#ff0000",
-        // "notebook.outputContainerBackgroundColor": "#ff0000",
-        // "notebook.outputContainerBorderColor": "#ff0000",
-        // "notebook.selectedCellBackground": "#ff0000",
-        // "notebook.selectedCellBorder": "#ff0000",
-        // "notebook.symbolHighlightBackground": "#ff0000"
+
+    // LANGUAGES
+    // ------------------------------------------------------------------------
+    "files.associations": {
+        "*.json": "jsonc"
     },
-    "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Sonokai Andromeda",
-    "workbench.iconTheme": "eq-material-theme-icons",
-    "editor.tokenColorCustomizations": {
-        "comments": "#0990ffdc"
+    "[markdown]": {
+        "editor.wordWrap": "off"
     },
-    "editor.rulers": [
-        80
-    ],
-    "editor.fontFamily": "FiraCode NF",
-    "editor.fontLigatures": true,
+
+    // THEMING
+    // - Developer: Inspect Editor Tokens and Scopes
+    // - Developer: Generate Color Theme From Current Settings
+    // - Developer: Toggle Developer Tools
+    // - code.visualstudio.com/api/references/theme-color
+    // - github.com/microsoft/vscode/blob/main/extensions/theme-defaults/
+    // ------------------------------------------------------------------------
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
+    "breadcrumbs.enabled": false,
+    "editor.wordWrap": "off",
+    "editor.rulers": [80, 120],
+    "editor.fontFamily": "Mononoki NFM",
+    "editor.fontSize": 14,
     "editor.fontWeight": "500",
-    "editor.fontSize": 12,
+    "editor.fontLigatures": true,
     "editor.showFoldingControls": "always",
     "editor.minimap.enabled": true,
     "editor.renderWhitespace": "boundary",
     "editor.tabCompletion": "on",
     "editor.quickSuggestionsDelay": 500,
     "editor.scrollBeyondLastLine": true,
-    "editor.wrappingStrategy": "simple",
-    "editor.wrappingIndent": "same",
-    "editor.wordWrap": "off",
-    "debug.console.wordWrap": false,
-    "diffEditor.wordWrap": "off",
-    "breadcrumbs.enabled": false,
-    "extensions.ignoreRecommendations": true,
-    "extensions.supportUntrustedWorkspaces": {
-        "vsciot-vscode.vscode-arduino":         { "supported": "limited" },
-        "ms-vscode.cpptools":                   { "supported": "limited" },
-        "twxs.cmake":                           { "supported": "limited" },
-        "ms-vscode.cmake-tools":                { "supported": "limited" },
-        "ms-vscode.vscode-typescript-next":     { "supported": "limited" },
-        // "ms-toolsai.jupyter":                   { "supported": "limited" },
-        // "ms-toolsai.jupyter-keymap":            { "supported": "limited" },
-        "ms-toolsai.jupyter-renderers":         { "supported": "limited" },
-        "equinusocio.vsc-material-theme-icons": { "supported": "limited" },
-        "ms-python.vscode-pylance":             { "supported": "limited" },
-        "ms-python.python":                     { "supported": "limited" },
-        "rust-lang.rust-analyzer":              { "supported": "limited" },
-        //  "sainnhe.sonokai"                      { "supported": "limited" },
-        "zxh404.vscode-proto3":                 { "supported": "limited" }
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "markdown.preview.fontFamily": "Mononoki NFM",
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.location": "default",
+    "workbench.sideBar.location": "right",
+    "workbench.colorCustomizations": {
+        "[Default Dark Modern]": {
+            "titleBar.activeBackground": "#0D1117",
+            "titleBar.border": "#282828",
+            "activityBar.background": "#0d1117",
+            "activityBar.foreground": "#388E3C",
+            "activityBar.activeBorder": "#f78166",
+            "activityBarBadge.background": "#388E3C",
+            "sideBarSectionHeader.background": "#0D1117",
+            "sideBarTitle.background": "#0D1117",
+            "sideBar.background": "#0D1117",
+            "sideBar.border": "#282828",
+            "editor.background": "#0D1117",
+            "editor.selectionBackground": "#283b63",
+            "editor.lineHighlightBackground": "#6e6e6e28",
+            "editor.wordHighlightBackground": "#54777730",
+            "editor.findMatchBackground": "#21b4b9",
+            "editor.findMatchHighlightBackground": "#21b4b977",
+            "editorBracketMatch.background": "#ffffff0c",
+            "editorBracketMatch.border": "#ffffff0D",
+            "editorCursor.foreground": "#ffffffbf",
+            "list.activeSelectionBackground": "#6e768166",
+            "list.activeSelectionForeground": "#e6edf3",
+            "list.inactiveSelectionBackground": "#6e768166",
+            "list.inactiveSelectionForeground": "#e6edf3",
+            "statusBar.background": "#0D1117",
+            "statusBar.border": "#282828",
+            "statusBarItem.remoteBackground": "#0D1117",
+            "statusBarItem.prominentBackground": "#0D1117",
+            "statusBarItem.prominentHoverBackground": "#388e3c8f",
+            "tab.border": "#282828",
+            "tab.activeBackground": "#0d1117",
+            "tab.activeBorder": "#0d1117",
+            "tab.activeBorderTop": "#0a5203",
+            "tab.activeForeground": "#e6edf3",
+            "tab.hoverBackground": "#0d1117",
+            "tab.inactiveBackground": "#010409",
+            "tab.inactiveForeground": "#7d8590",
+            "tab.unfocusedActiveBorder": "#0d1117",
+            "tab.unfocusedActiveBorderTop": "#30363d",
+            "tab.unfocusedHoverBackground": "#6e76811a",
+            "checkbox.background": "#0d1117",
+            "debugToolBar.background": "#0d1117",
+            "dropdown.background": "#0d1117",
+            "dropdown.listBackground": "#0d1117",
+            "editorWidget.background": "#0d1117",
+            "notificationCenterHeader.background": "#0d1117",
+            "notifications.background": "#0d1117",
+            "quickInput.background": "#0d1117",
+            "editorGroupHeader.tabsBackground": "#0d1117",
+            "panel.background": "#0d1117",
+            "menu.background": "#181818"
+        }
     },
-    "python.defaultInterpreterPath": "python",
-    "python.venvFolders": ["venv"],
-    "python.venvPath": ".",
-    "jupyter.askForKernelRestart": true,
-    "jupyter.decorateCells": true,
-    "notebook.cellFocusIndicator": "gutter",
-    "notebook.showCellStatusBar": "visible",
-    "notebook.cellToolbarLocation": { "default": "right" },
-    "notebook.cellToolbarVisibility": "hover",
-    "notebook.outline.showCodeCells": true,
-    "notebook.compactView": true,
-    "notebook.insertToolbarLocation": "hidden",
-    "notebook.lineNumbers": "on",
-    "notebook.editorOptionsCustomizations": {},
-    "notebook.dragAndDropEnabled": true,
-    "notebook.globalToolbar": false,
-    "C_Cpp.default.cppStandard": "c++20",
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "C_Cpp.default.compilerPath": "g++",
-    "C_Cpp.default.includePath": [
-        "${default}",
-        "${VCPKG_ROOT}/installed/x64-mingw-static/include",
-        "${VULKAN_SDK}/include"
-    ],
-    "cmake.cmakePath": "",
-    "cmake.configureOnOpen": false,
-    "cmake.configureOnEdit": false,
-    "cmake.configureSettings": {
-        "CMAKE_TOOLCHAIN_FILE": "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+    "editor.tokenColorCustomizations": {
+        "[Default Dark Modern]": {
+            "comments": "#8B949E",
+            "textMateRules": [
+                {
+                    "scope": "support.type.property-name.json",
+                    "settings": {
+                        "foreground": "#7EE787"
+                    }
+                }
+            ]
+        }
     },
-    "cmake.generator": "MinGW Makefiles",
-    "arduino.path": "",
-    "arduino.commandPath": "arduino_debug.exe",
-    "arduino.logLevel": "info",
-    "arduino.enableUSBDetection": false,
-    "arduino.disableTestingOpen": true,
-    "arduino.skipHeaderProvider": true,
-    "arduino.additionalUrls": [
-        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-    ],
-    "arduino.defaultBaudRate": 115200
+
+    // EXTENSIONS
+    // ------------------------------------------------------------------------
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": true,
+    "extensions.ignoreRecommendations": true
 }
