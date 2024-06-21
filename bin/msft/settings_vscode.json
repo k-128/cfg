@@ -45,6 +45,7 @@
     "workbench.layoutControl.enabled": false,
     "workbench.activityBar.location": "default",
     "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.colorCustomizations": {
         "[Default Dark Modern]": {
             "titleBar.activeBackground": "#0D1117",
