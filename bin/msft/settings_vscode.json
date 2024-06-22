@@ -107,7 +107,7 @@
                 {
                     "scope": "support.type.property-name.json",
                     "settings": {
-                        "foreground": "#7EE787"
+                        "foreground": "#43A047"
                     }
                 }
             ]
