@@ -42,8 +42,10 @@
     "editor.scrollBeyondLastLine": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "markdown.preview.fontFamily": "Mononoki NFM",
+    "workbench.editor.enablePreview": true,
+    "workbench.list.openMode": "singleClick",
     "workbench.layoutControl.enabled": false,
-    "workbench.activityBar.location": "default",
+    "workbench.activityBar.location": "hidden",
     "workbench.sideBar.location": "right",
     "workbench.colorTheme": "Default Dark Modern",
     "workbench.colorCustomizations": {
