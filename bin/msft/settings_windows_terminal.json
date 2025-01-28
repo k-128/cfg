@@ -1,71 +1,84 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    // https://learn.microsoft.com/en-us/windows/terminal/customize-settings/actions/
-    "actions":
-    [
-        // Removed keybindings
-        {"command": "unbound", "keys": "alt+shift+left"},
-        {"command": "unbound", "keys": "alt+shift+up"},
-        {"command": "unbound", "keys": "alt+shift+right"},
-        {"command": "unbound", "keys": "alt+shift+down"},
-        // Keybindings
-        {"command": "find", "keys": "ctrl+shift+f"},
-        {
-            "command":
-            {
-                "action": "nextTab"
-            },
-            "keys": "ctrl+pgdn"
+    "actions": [{
+        "command": "unbound", "keys": "alt+shift+left"  }, {
+        "command": "unbound", "keys": "alt+shift+up"    }, {
+        "command": "unbound", "keys": "alt+shift+right" }, {
+        "command": "unbound", "keys": "alt+shift+down"
+    }, {
+        "command": "find",
+        "id": "User.find",
+        "keys": "ctrl+shift+f"
+    }, {
+        "command": {
+            "action": "splitPane",
+            "split": "auto",
+            "splitMode": "duplicate"
         },
-        {
-            "command":
-            {
-                "action": "prevTab"
-            },
-            "keys": "ctrl+pgup"
-        },
-        {
-            "command":
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        }
-    ],
-    "copyOnSelect": false,               // Set normal copy
-    "copyFormatting": "none",            // ...
-    "alwaysShowTabs": false,             // Show tabs only when more than one exist
-    "showTabsInTitlebar": false,         // ...
-    "disableAnimations": false,          // Unset animations
-    "alwaysShowNotificationIcon": false, // Unset system tray icon
-    "minimizeToNotificationArea": false, // ...
-    "launchMode": "default",                                    // Startup
-    "defaultProfile": "{272ebc39-7e55-427a-8af7-d350d7a818ad}", // ...
+        "id": "User.splitPane.A6751878",
+        "keys": "alt+shift+d"
+    }, {
+        "command": "nextTab",
+        "id": "User.nextTab.0",
+        "keys": "ctrl+pgdn"
+    }, {
+        "command": "prevTab",
+        "id": "User.prevTab.0",
+        "keys": "ctrl+pgup"
+    }],
+    "minimizeToNotificationArea": false,
+    "alwaysShowNotificationIcon": false,
+    "alwaysShowTabs": true,
+    "showTabsInTitlebar": true,
+    "useAcrylicInTabRow": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "disableAnimations": false,
+    "launchMode": "default",
+    "defaultProfile": "{272ebc39-7e55-427a-8af7-d350d7a818ad}",
+    "newTabMenu": [{"type": "remainingProfiles"}],
     "profiles":
     {
         "defaults":
         {
-            "startingDirectory": ".",
-            "historySize": 9001,
-            "font":
-            {
-                "face": "FiraCode NF",
-                "size": 10.0
-            },
             "antialiasingMode": "cleartype",
-            "padding": "8, 8, 8, 0",
+            "intenseTextStyle": "bright",
+            "showMarksOnScrollbar": false,
+            "backgroundImage": "desktopWallpaper",
+            "backgroundImageOpacity": 0.25,
             "bellStyle": "none",
+            "colorScheme": "Dark+ (modified)",
             "cursorHeight": 25,
             "cursorShape": "underscore",
-            "colorScheme": "Dark+",
             "experimental.retroTerminalEffect": false,
-            // "useAcrylic": true, // Requires Transparency effects: 1
-            // "opacity": 50,      // ...
-            "backgroundImage": "desktopWallpaper",
-            "backgroundImageOpacity": 0.15
+            "scrollbarState": "hidden",
+            "font":
+            {
+                "face": "Monaspace Krypton",
+                "size": 9,
+                // "cellHeight": "1.1",
+                // "cellWidth": "0.6",
+                "weight": "extra-light",
+                "axes": {
+                    "slnt": 0,
+                    "ital": 1,
+                    "wdth": 100
+                },
+                "features": {
+                    "calt": 1,
+                    "liga": 1,
+                    "ss01": 1,
+                    "ss02": 1,
+                    "ss03": 1,
+                    "ss04": 1
+                }
+            },
+            "historySize": 9001,
+            "opacity": 90,
+            "padding": "2, 2, 2, 0",
+            "startingDirectory": ".",
+            "useAcrylic": false
         },
         "list":
         [
@@ -140,7 +153,6 @@
         ]
     },
     "themes": [],
-    "useAcrylicInTabRow": true,
     "schemes":
     [
         {

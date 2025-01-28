@@ -1,6 +1,4 @@
 {
-    "telemetry.telemetryLevel": "off",
-
     // SECURITY
     // ------------------------------------------------------------------------
     "security.workspace.trust.enabled": true,
@@ -9,14 +7,16 @@
     "security.workspace.trust.emptyWindow": false,
     "security.workspace.trust.untrustedFiles": "newWindow",
 
-    // LANGUAGES
+    // GENERAL
     // ------------------------------------------------------------------------
-    "files.associations": {
-        "*.json": "jsonc"
-    },
-    "[markdown]": {
-        "editor.wordWrap": "off"
-    },
+    "telemetry.telemetryLevel": "off",
+    "search.useIgnoreFiles": true,
+    "explorer.excludeGitIgnore": false,
+    "explorer.confirmDelete": false,
+
+    // TERMINAL
+    // ------------------------------------------------------------------------
+    "terminal.integrated.hideOnStartup": "always",
 
     // THEMING
     // - Developer: Inspect Editor Tokens and Scopes
@@ -25,15 +25,17 @@
     // - code.visualstudio.com/api/references/theme-color
     // - github.com/microsoft/vscode/blob/main/extensions/theme-defaults/
     // ------------------------------------------------------------------------
+    // Fonts
+    "editor.fontFamily": "'Monaspace Neon Var', monospace",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "300",
+    "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04'",
+    // 
     "window.commandCenter": false,
     "window.menuBarVisibility": "toggle",
     "breadcrumbs.enabled": false,
     "editor.wordWrap": "off",
     "editor.rulers": [80, 120],
-    "editor.fontFamily": "Mononoki NFM",
-    "editor.fontSize": 14,
-    "editor.fontWeight": "500",
-    "editor.fontLigatures": true,
     "editor.showFoldingControls": "always",
     "editor.minimap.enabled": true,
     "editor.renderWhitespace": "boundary",
@@ -41,12 +43,11 @@
     "editor.quickSuggestionsDelay": 500,
     "editor.scrollBeyondLastLine": true,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "markdown.preview.fontFamily": "Mononoki NFM",
     "workbench.editor.enablePreview": true,
     "workbench.list.openMode": "singleClick",
+    "workbench.sideBar.location": "right",
     "workbench.layoutControl.enabled": false,
     "workbench.activityBar.location": "hidden",
-    "workbench.sideBar.location": "right",
     "workbench.colorTheme": "Default Dark Modern",
     "workbench.colorCustomizations": {
         "[Default Dark Modern]": {
@@ -115,6 +116,22 @@
             ]
         }
     },
+
+    // LANGUAGES
+    // ------------------------------------------------------------------------
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "off",
+    },
+    "markdown.preview.fontFamily": "'Monaspace Krypton Var', monospace",
+    "markdown.preview.fontSize": 11,
+    "markdown.preview.breaks": true,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.markEditorSelection": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
 
     // EXTENSIONS
     // ------------------------------------------------------------------------

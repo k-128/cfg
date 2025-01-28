@@ -1,22 +1,27 @@
 {
-    "workbench.colorTheme": "Sonokai Andromeda", // "GitHub Dark Default"
-    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.iconTheme": "vscode-icons",
+    // "workbench.colorTheme": "Sonokai Andromeda", // "GitHub Dark Default"
 
     "extensions.supportUntrustedWorkspaces": {
-        "vsciot-vscode.vscode-arduino":         { "supported": "limited" },
-        "ms-vscode.cpptools":                   { "supported": "limited" },
-        "twxs.cmake":                           { "supported": "limited" },
-        "ms-vscode.cmake-tools":                { "supported": "limited" },
-        "ms-vscode.vscode-typescript-next":     { "supported": "limited" },
+        // "ms-vscode.cpptools":                   { "supported": "limited" },
+        // "ms-vscode.cpptools-extension-pack":    { "supported": "limited" },
+        // "ms-vscode.cmake-tools":                { "supported": "limited" },
+        // "twxs.cmake":                           { "supported": "limited" },
+        // "ms-dotnettools.csharp":                { "supported": "limited" },
+        // "Dart-Code.dart-code":                  { "supported": "limited" },
+        // "Dart-Code.flutter":                    { "supported": "limited" },
+        // "vsciot-vscode.vscode-arduino":         { "supported": "limited" },
+        // "ms-vscode.vscode-typescript-next":     { "supported": "limited" },
+        // "bradlc.vscode-tailwindcss":            { "supported": "limited" },
+        // "svelte.svelte-vscode":                 { "supported": "limited" },
         // "ms-toolsai.jupyter":                   { "supported": "limited" },
         // "ms-toolsai.jupyter-keymap":            { "supported": "limited" },
-        "ms-toolsai.jupyter-renderers":         { "supported": "limited" },
-        "equinusocio.vsc-material-theme-icons": { "supported": "limited" },
-        "ms-python.vscode-pylance":             { "supported": "limited" },
-        "ms-python.python":                     { "supported": "limited" },
-        "rust-lang.rust-analyzer":              { "supported": "limited" },
+        // "ms-toolsai.jupyter-renderers":         { "supported": "limited" },
+        // "ms-python.vscode-pylance":             { "supported": "limited" },
+        // "ms-python.python":                     { "supported": "limited" },
+        // "rust-lang.rust-analyzer":              { "supported": "limited" },
         //  "sainnhe.sonokai"                      { "supported": "limited" },
-        "zxh404.vscode-proto3":                 { "supported": "limited" }
+        // "zxh404.vscode-proto3":                 { "supported": "limited" }
     },
 
     "python.defaultInterpreterPath": "python",
