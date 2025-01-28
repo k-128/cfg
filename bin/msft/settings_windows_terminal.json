@@ -59,7 +59,7 @@
                 "size": 9,
                 // "cellHeight": "1.1",
                 // "cellWidth": "0.6",
-                "weight": "extra-light",
+                "weight": 100,
                 "axes": {
                     "slnt": 0,
                     "ital": 1,
