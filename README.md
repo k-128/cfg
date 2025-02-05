@@ -57,5 +57,6 @@ sudo raspi-config  # - Localisation Options -> WLAN Country
 ##### Resources
 - (fonts) [g: githubnext/monaspace](https://github.com/githubnext/monaspace)
 - (fonts) [g: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- (win) [g: microsoft/PowerToys](https://github.com/microsoft/PowerToys)
 
 <br />
