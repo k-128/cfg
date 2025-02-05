@@ -15,7 +15,8 @@
 │   │   ├── .vimrc
 │   │   ├── .vimrc-full
 │   │   ├── .zshrc
-│   │   └── .zshrc-full
+│   │   ├── .zshrc-full
+│   │   └── foot.ini
 │   ├── fonts/
 │   │   msft/
 │   │   ├── settings_vscode.json
@@ -31,10 +32,7 @@
 
 <br />
 
-### Scripts
----
-
-<br />
+##### Scripts
 
 *./src/set_base_packages.sh*
 - Set fonts, configs and packages
@@ -53,5 +51,11 @@ sudo raspi-config  # - Localisation Options -> WLAN Country
 
 *./src/set_ssh_server.sh*
 - Set secured SSH server
+
+<br />
+
+##### Resources
+- (fonts) [g: githubnext/monaspace](https://github.com/githubnext/monaspace)
+- (fonts) [g: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 <br />
