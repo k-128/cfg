@@ -1,141 +1,185 @@
 {
-    // SECURITY
-    // ------------------------------------------------------------------------
-    "security.workspace.trust.enabled": true,
-    "security.workspace.trust.banner": "never",
-    "security.workspace.trust.startupPrompt": "never",
-    "security.workspace.trust.emptyWindow": false,
-    "security.workspace.trust.untrustedFiles": "newWindow",
+  // SECURITY
+  // ------------------------------------------------------------------------
+  "security.workspace.trust.enabled": true,
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.untrustedFiles": "newWindow",
 
-    // GENERAL
-    // ------------------------------------------------------------------------
-    "telemetry.telemetryLevel": "off",
-    "search.useIgnoreFiles": true,
-    "explorer.excludeGitIgnore": false,
-    "explorer.confirmDelete": false,
+  // GENERAL
+  // ------------------------------------------------------------------------
+  "telemetry.telemetryLevel": "off",
+  "search.useIgnoreFiles": true,
+  "explorer.excludeGitIgnore": false,
+  "explorer.confirmDelete": false,
 
-    // TERMINAL
-    // ------------------------------------------------------------------------
-    "terminal.integrated.hideOnStartup": "always",
+  // TERMINAL
+  // ------------------------------------------------------------------------
+  "terminal.integrated.hideOnStartup": "always",
 
-    // THEMING
-    // - Developer: Inspect Editor Tokens and Scopes
-    // - Developer: Generate Color Theme From Current Settings
-    // - Developer: Toggle Developer Tools
-    // - code.visualstudio.com/api/references/theme-color
-    // - github.com/microsoft/vscode/blob/main/extensions/theme-defaults/
-    // ------------------------------------------------------------------------
-    // Fonts
-    "editor.fontFamily": "'Monaspace Neon Var', monospace",
-    "editor.fontSize": 12,
-    "editor.fontWeight": "300",
-    "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04'",
-    // 
-    "window.commandCenter": false,
-    "window.menuBarVisibility": "toggle",
-    "breadcrumbs.enabled": false,
-    "editor.wordWrap": "off",
-    "editor.rulers": [80, 120],
-    "editor.showFoldingControls": "always",
-    "editor.minimap.enabled": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.tabCompletion": "on",
-    "editor.quickSuggestionsDelay": 500,
-    "editor.scrollBeyondLastLine": true,
-    "editor.unicodeHighlight.nonBasicASCII": false,
-    "workbench.editor.enablePreview": true,
-    "workbench.list.openMode": "singleClick",
-    "workbench.sideBar.location": "right",
-    "workbench.layoutControl.enabled": false,
-    "workbench.activityBar.location": "hidden",
-    "workbench.colorTheme": "Default Dark Modern",
-    "workbench.colorCustomizations": {
-        "[Default Dark Modern]": {
-            "titleBar.activeBackground": "#0D1117",
-            "titleBar.border": "#282828",
-            "activityBar.background": "#0d1117",
-            "activityBar.foreground": "#388E3C",
-            "activityBar.activeBorder": "#f78166",
-            "activityBarBadge.background": "#388E3C",
-            "sideBarSectionHeader.background": "#0D1117",
-            "sideBarTitle.background": "#0D1117",
-            "sideBar.background": "#0D1117",
-            "sideBar.border": "#282828",
-            "editor.background": "#0D1117",
-            "editor.selectionBackground": "#283b63",
-            "editor.lineHighlightBackground": "#6e6e6e28",
-            "editor.wordHighlightBackground": "#54777730",
-            "editor.findMatchBackground": "#21b4b9",
-            "editor.findMatchHighlightBackground": "#21b4b977",
-            "editorBracketMatch.background": "#ffffff0c",
-            "editorBracketMatch.border": "#ffffff0D",
-            "editorCursor.foreground": "#ffffffbf",
-            "list.activeSelectionBackground": "#6e768166",
-            "list.activeSelectionForeground": "#e6edf3",
-            "list.inactiveSelectionBackground": "#6e768166",
-            "list.inactiveSelectionForeground": "#e6edf3",
-            "statusBar.background": "#0D1117",
-            "statusBar.border": "#282828",
-            "statusBarItem.remoteBackground": "#0D1117",
-            "statusBarItem.prominentBackground": "#0D1117",
-            "statusBarItem.prominentHoverBackground": "#388e3c8f",
-            "tab.border": "#282828",
-            "tab.activeBackground": "#0d1117",
-            "tab.activeBorder": "#0d1117",
-            "tab.activeBorderTop": "#0a5203",
-            "tab.activeForeground": "#e6edf3",
-            "tab.hoverBackground": "#0d1117",
-            "tab.inactiveBackground": "#010409",
-            "tab.inactiveForeground": "#7d8590",
-            "tab.unfocusedActiveBorder": "#0d1117",
-            "tab.unfocusedActiveBorderTop": "#30363d",
-            "tab.unfocusedHoverBackground": "#6e76811a",
-            "checkbox.background": "#0d1117",
-            "debugToolBar.background": "#0d1117",
-            "dropdown.background": "#0d1117",
-            "dropdown.listBackground": "#0d1117",
-            "editorWidget.background": "#0d1117",
-            "notificationCenterHeader.background": "#0d1117",
-            "notifications.background": "#0d1117",
-            "quickInput.background": "#0d1117",
-            "editorGroupHeader.tabsBackground": "#0d1117",
-            "panel.background": "#0d1117",
-            "menu.background": "#181818"
-        }
-    },
-    "editor.tokenColorCustomizations": {
-        "[Default Dark Modern]": {
-            "comments": "#8B949E",
-            "textMateRules": [
-                {
-                    "scope": "support.type.property-name.json",
-                    "settings": {
-                        "foreground": "#43A047"
-                    }
-                }
-            ]
-        }
-    },
+  // THEMING
+  // - Developer: Inspect Editor Tokens and Scopes
+  // - Developer: Generate Color Theme From Current Settings
+  // - Developer: Toggle Developer Tools
+  // - code.visualstudio.com/api/references/theme-color
+  // - github.com/microsoft/vscode/blob/main/extensions/theme-defaults/
+  // ------------------------------------------------------------------------
+  // Fonts
+  "editor.fontFamily": "Monaspace Krypton Frozen",
+  "editor.fontSize": 12,
+  "editor.fontWeight": "300",
+  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04'",
+  // 
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "breadcrumbs.enabled": false,
+  "editor.wordWrap": "off",
+  "editor.rulers": [80, 120],
+  "editor.showFoldingControls": "always",
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.tabCompletion": "on",
+  "editor.quickSuggestionsDelay": 500,
+  "editor.scrollBeyondLastLine": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.editor.enablePreview": true,
+  "workbench.startupEditor": "none",
+  "workbench.list.openMode": "singleClick",
+  "workbench.sideBar.location": "right",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "titleBar.activeBackground": "#0c0a09",
+      "titleBar.border": "#181818",
+      "activityBar.background": "#0c0a09",
+      "activityBar.foreground": "#388E3C",
+      "activityBar.activeBorder": "#f78166",
+      "activityBarBadge.background": "#388E3C",
+      "sideBarSectionHeader.background": "#0c0a09",
+      "sideBarTitle.background": "#0c0a09",
+      "sideBar.background": "#0c0a09",
+      "sideBar.border": "#181818",
+      "editor.background": "#0c0a09",
+      "editor.selectionBackground": "#283b63",
+      "editor.lineHighlightBackground": "#6e6e6e28",
+      "editor.wordHighlightBackground": "#54777730",
+      "editor.findMatchBackground": "#21b4b9",
+      "editor.findMatchHighlightBackground": "#21b4b977",
+      "editorBracketMatch.background": "#ffffff0c",
+      "editorBracketMatch.border": "#ffffff0D",
+      "editorCursor.foreground": "#E0E0E0",
+      "list.activeSelectionBackground": "#6e768166",
+      "list.activeSelectionForeground": "#E0E0E0",
+      "list.inactiveSelectionBackground": "#6e768166",
+      "list.inactiveSelectionForeground": "#e6edf3",
+      "list.errorForeground": "#FF0000",
+      "list.warningForeground": "#FF9800AA",
+      "statusBar.background": "#0c0a09",
+      "statusBar.border": "#181818",
+      "statusBarItem.remoteBackground": "#0c0a09",
+      "statusBarItem.prominentBackground": "#0c0a09",
+      "statusBarItem.prominentHoverBackground": "#388e3c8f",
+      "tab.border": "#181818",
+      "tab.activeBackground": "#0c0a09",
+      "tab.activeBorder": "#0c0a09",
+      "tab.activeBorderTop": "#0a5203",
+      "tab.activeForeground": "#e6edf3",
+      "tab.hoverBackground": "#0c0a09",
+      "tab.inactiveBackground": "#0c0a09",
+      "tab.inactiveForeground": "#7d8590",
+      "tab.unfocusedActiveBorder": "#181818",
+      "tab.unfocusedActiveBorderTop": "#30363d",
+      "tab.unfocusedHoverBackground": "#6e76811a",
+      "checkbox.background": "#0c0a09",
+      "debugToolBar.background": "#0c0a09",
+      "dropdown.background": "#0c0a09",
+      "dropdown.listBackground": "#0c0a09",
+      "editorWidget.background": "#0c0a09",
+      "notificationCenterHeader.background": "#0c0a09",
+      "notifications.background": "#0c0a09",
+      "quickInput.background": "#0c0a09",
+      "editorGroupHeader.tabsBackground": "#0c0a09",
+      "panel.background": "#0c0a09",
+      "menu.background": "#181818",
+      "editorBracketHighlight.foreground1": "#00A1B7",
+      "editorBracketHighlight.foreground2": "#734BB8",
+      "editorBracketHighlight.foreground3": "#43A047",
+      "editorBracketHighlight.foreground4": "#B84D47",
+      "editorBracketHighlight.unexpectedBracket.foreground": "#DF6165"
+    }
+  },
+  "editor.tokenColorCustomizations": {
+    "[Default Dark Modern]": {
+      "textMateRules": [
+        {"scope": "comment",                                          "settings": {"foreground": "#6b6b6b", "fontStyle": "italic"}},
+        {"scope": "constant.numeric",                                 "settings": {"foreground": "#734BB8"}},
+        {"scope": "constant.language",                                "settings": {"foreground": "#734BB8"}},
+        {"scope": "entity.name.class",                                "settings": {"foreground": "#9E9E9E"}},
+        {"scope": "entity.name.function",                             "settings": {"foreground": "#734BB8"}},
+        {"scope": "entity.name.function.preprocessor",                "settings": {"foreground": "#525E91"}},
+        {"scope": "entity.name.tag",                                  "settings": {"foreground": "#00A1B7"}},
+        {"scope": "entity.name.tag.css",                              "settings": {"foreground": "#00A1B7"}},
+        {"scope": "entity.name.type",                                 "settings": {"foreground": "#c23e16"}},
+        {"scope": "entity.other.attribute-name",                      "settings": {"foreground": "#8A7C8F"}},
+        {"scope": "entity.other.attribute-name.class.css",            "settings": {"foreground": "#00A1B7"}},
+        {"scope": "entity.other.attribute-name.pseudo-element.css",   "settings": {"foreground": "#00A1B7"}},
+        {"scope": "entity.other.attribute-name.pseudo-class.css",     "settings": {"foreground": "#00A1B7"}},
+        {"scope": "function",                                         "settings": {"foreground": "#734BB8"}},
+        {"scope": "keyword",                                          "settings": {"foreground": "#525E91"}},
+        {"scope": "keyword.control",                                  "settings": {"foreground": "#8D787F"}},
+        {"scope": "keyword.operator",                                 "settings": {"foreground": "#A5C400"}},
+        {"scope": "keyword.other.unit",                               "settings": {"foreground": "#A5C400"}},
+        {"scope": "markup.heading",                                   "settings": {"foreground": "#734BB8"}},
+        {"scope": "meta.preprocessor",                                "settings": {"foreground": "#525E91"}},
+        {"scope": "meta.selector",                                    "settings": {"foreground": "#00A1B7"}},
+        {"scope": "punctuation.definition.template-expression.begin", "settings": {"foreground": "#734BB8"}},
+        {"scope": "punctuation.definition.template-expression.end",   "settings": {"foreground": "#734BB8"}},
+        {"scope": "source.css variable",                              "settings": {"foreground": "#00A1B7"}},
+        {"scope": "storage.modifier",                                 "settings": {"foreground": "#43A047"}},
+        {"scope": "storage.type",                                     "settings": {"foreground": "#43A047"}},
+        {"scope": "string",                                           "settings": {"foreground": "#B84D47"}},
+        {"scope": "string.quoted.single",                             "settings": {"foreground": "#B84D47"}},
+        {"scope": "string.quoted.double",                             "settings": {"foreground": "#B84D47"}},
+        {"scope": "string.template.ts",                               "settings": {"foreground": "#B84D47"}},
+        {"scope": "support.class",                                    "settings": {"foreground": "#00A1B7"}},
+        {"scope": "support.constant.property-value",                  "settings": {"foreground": "#734BB8"}},
+        {"scope": "support.function",                                 "settings": {"foreground": "#734BB8"}},
+        {"scope": "support.type",                                     "settings": {"foreground": "#43A047"}},
+        {"scope": "support.type.property-name",                       "settings": {"foreground": "#43A047"}},
+        {"scope": "support.type.vendored.property-name",              "settings": {"foreground": "#43A047"}},
+        {"scope": "support.variable",                                 "settings": {"foreground": "#00A1B7"}},
+        {"scope": "variable",                                         "settings": {"foreground": "#00A1B7"}},
+        {"scope": "variable.other",                                   "settings": {"foreground": "#B0BEC5"}},
+        {"scope": "variable.other.constant",                          "settings": {"foreground": "#00A1B7"}},
+        {"scope": "variable.other.readwrite",                         "settings": {"foreground": "#00A1B7"}}
+      ]
+    }
+  },
 
-    // LANGUAGES
-    // ------------------------------------------------------------------------
-    "files.associations": {
-        "*.json": "jsonc"
-    },
-    "[markdown]": {
-        "editor.wordWrap": "off",
-    },
-    "markdown.preview.fontFamily": "'Monaspace Krypton Var', monospace",
-    "markdown.preview.fontSize": 11,
-    "markdown.preview.breaks": true,
-    "markdown.preview.doubleClickToSwitchToEditor": false,
-    "markdown.preview.markEditorSelection": false,
-    "markdown.preview.scrollEditorWithPreview": false,
-    "markdown.preview.scrollPreviewWithEditor": false,
+  // LANGUAGES
+  // ------------------------------------------------------------------------
+  "files.associations": {
+    "*.json": "jsonc",
+    "*.css": "tailwindcss"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off"
+  },
+  "markdown.preview.fontFamily": "Monaspace Neon Var",
+  "markdown.preview.fontSize": 12,
+  "markdown.preview.breaks": true,
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "markdown.preview.markEditorSelection": false,
+  "markdown.preview.scrollEditorWithPreview": false,
+  "markdown.preview.scrollPreviewWithEditor": false,
 
-    // EXTENSIONS
-    // ------------------------------------------------------------------------
-    "extensions.autoUpdate": false,
-    "extensions.autoCheckUpdates": true,
-    "extensions.ignoreRecommendations": true
+  // EXTENSIONS
+  // ------------------------------------------------------------------------
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": true,
+  "extensions.ignoreRecommendations": true
 }
