@@ -29,7 +29,7 @@
   "editor.fontFamily": "Monaspace Krypton Frozen",
   "editor.fontSize": 12,
   "editor.fontWeight": "300",
-  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04'",
+  "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
   // 
   "window.commandCenter": false,
   "window.menuBarVisibility": "toggle",
@@ -38,6 +38,7 @@
   "editor.rulers": [80, 120],
   "editor.showFoldingControls": "always",
   "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
   "editor.renderWhitespace": "boundary",
   "editor.tabCompletion": "on",
   "editor.quickSuggestionsDelay": 500,
@@ -169,17 +170,25 @@
   "[markdown]": {
     "editor.wordWrap": "off"
   },
-  "markdown.preview.fontFamily": "Monaspace Neon Var",
-  "markdown.preview.fontSize": 12,
+  "markdown.preview.fontFamily": "Monaspace Argon Frozen",
+  "markdown.preview.fontSize": 11,
   "markdown.preview.breaks": true,
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "markdown.preview.markEditorSelection": false,
   "markdown.preview.scrollEditorWithPreview": false,
   "markdown.preview.scrollPreviewWithEditor": false,
+  "notebook.markup.fontFamily": "Monaspace Krypton Frozen",
+  "notebook.markup.fontSize": 11,
 
   // EXTENSIONS
   // ------------------------------------------------------------------------
   "extensions.autoUpdate": false,
   "extensions.autoCheckUpdates": true,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "git.enabled": false,
+  "git.autoRepositoryDetection": false,
+  "git.autorefresh": false,
+  "notebook.insertToolbarLocation": "notebookToolbar"
 }
