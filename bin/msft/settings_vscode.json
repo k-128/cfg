@@ -33,6 +33,7 @@
   // 
   "window.commandCenter": false,
   "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom",
   "breadcrumbs.enabled": false,
   "editor.wordWrap": "off",
   "editor.rulers": [80, 120],
@@ -54,6 +55,8 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
+      "window.activeBorder": "#57534d",
+      "window.inactiveBorder": "#171717",
       "titleBar.activeBackground": "#0c0a09",
       "titleBar.border": "#181818",
       "activityBar.background": "#0c0a09",
