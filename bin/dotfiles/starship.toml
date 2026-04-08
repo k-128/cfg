@@ -1,0 +1,46 @@
+# Add a new line above prompts
+add_newline       = false
+
+# Top level format -------------------------------------------------------------
+# - starship.rs/faq/#do-top-level-format-and-module-disabled-do-the-same-thing
+# - not listed = not evaluated, $all sets all remaining non disabled modules
+format            = """$directory"""
+right_format      = """$status$python$git_branch$username$hostname$time"""
+
+# Modules ----------------------------------------------------------------------
+[directory]
+style             = "fg:#1d4ed8"
+format            = "[ $path ](fg:#00afff)[$read_only](fg:#ef4444)" # 00afff=39
+read_only	        = '🔒' # 🔒, 
+truncation_length = 3
+truncation_symbol = "󰇘/" # 󰇘, …
+truncate_to_repo  = false
+home_symbol       = "~" # ~, , 
+
+[git_branch]
+format            = '[$symbol $branch(:$remote_branch)](fg:#d97706) '
+symbol            = '' # , , , 
+truncation_length = 9
+truncation_symbol = "…" # …, 󰇘
+
+[hostname]
+disabled          = false
+ssh_only          = false
+format            = '[@$hostname](fg:#0087af) ' # @, 󰖟, 󰁥
+
+[python]
+format            = '[($symbol $virtualenv)](fg:#43A047) '
+symbol            = '󱔎' # 🐍, 󱔎
+
+[status]
+disabled          = false
+format            = '[✘ $status](fg:#ef4444) ' # ✘, 🔴
+
+[time]
+disabled          = false
+format            = '[ $time](fg:#64748b)' # 🕙, , 󱦟
+time_format       = "%H:%M:%S"
+
+[username]
+show_always       = true
+format            = '[ $user](fg:#0087af)' # 0087af=31

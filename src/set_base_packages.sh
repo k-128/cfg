@@ -12,16 +12,15 @@ readonly PATH_DOTFILES="${PATH_DIR}/../bin/dotfiles"
 readonly PATH_FONTS="${PATH_DIR}/../bin/fonts/nix"
 
 source "${PATH_DIR}/utils.sh"
-LOG_LVL=1
+LOG_LVL=2
 
 readonly PKGS_REQ=(git vim tmux rsync htop curl)
 readonly PKGS_ZSH=(zsh)
+readonly URL_ZSH_AS="https://github.com/zsh-users/zsh-autosuggestions.git"
+readonly URL_ZSH_SH="https://github.com/zsh-users/zsh-syntax-highlighting.git"
 readonly URL_GITHUB_RAW="https://raw.githubusercontent.com"
 readonly URL_VIM_PLUG="${URL_GITHUB_RAW}/junegunn/vim-plug/master/plug.vim"
 readonly URL_TMUX_PLUG="https://github.com/tmux-plugins/tpm.git"
-readonly URL_ZSH_AS="https://github.com/zsh-users/zsh-autosuggestions.git"
-readonly URL_ZSH_SH="https://github.com/zsh-users/zsh-syntax-highlighting.git"
-readonly URL_P10K="https://github.com/romkatv/powerlevel10k.git"
 readonly TMUX_COLORS=(red orange yellow green blue indigo violet grey)
 
 
@@ -29,48 +28,39 @@ function display_help()
 {
   print_underlined "Help"
   printf "Set fonts, configs and packages (${PKGS_REQ[*]})\n"
+  printf "Warning: overrides existing conf.\n"
   printf "Options:\n"
   printf "\t-h \t\tDisplay this message.\n"
-  printf "\t-v \t\tMore verbose output\n"
-  printf "\t-z \t\tAdd: zsh, zsh-autosuggestions, zsh-syntax-highlighting\n"
-  printf "\t-f \t\tFull, add:\n"
-  printf "\t   \t\t- vim plugins\n"
-  printf "\t   \t\t- zsh, zsh-autosuggestions, zsh-syntax-highlighting, p10k\n"
-  printf "\t-t \t\tAdd tmux plugins: tpm, tmux-resurrect, tmux-continuum\n"
+  printf "\t-z \t\tAdd: zsh, zsh-autosuggestions, zsh-syntax-highlighting, starship.toml\n"
+  printf "\t-v \t\tAdd: vim plugins\n"
+  printf "\t-t \t\tAdd: tmux plugins (tpm, tmux-resurrect, tmux-continuum)\n"
   printf "\t-c \"color\"\tTmux color, options (default: blue):\n"
   printf "\t   \t\t- ${TMUX_COLORS[*]}\n"
   printf "Example:\n"
-  printf "\t${PATH_DIR}/${SCRIPT_NAME} -vfc 'orange'"
+  printf "\t${PATH_DIR}/${SCRIPT_NAME} -zvc 'orange'"
   printf "\n"
 }
 
 
 function main()
 {
-  # cfg
-  # ---------------------------------------------------------------------------
+  # cfg ------------------------------------------------------------------------
   local tmux_color="blue"
   local fp_tmux_theme="${PATH_DOTFILES}/tmux/.tmux-theme-${tmux_color}.conf"
   local pkgs=("${PKGS_REQ[@]}")
-  local is_full=""
+  local is_zsh=""
+  local is_vim_plugins=""
   local is_tmux_plugins=""
 
   local OPTIND=1  # Reset getopts OPTIND
-  while getopts ":hvzftc:" flag; do
+  while getopts ":hzvtc:" flag; do
     case "${flag}" in
       h)
         display_help
         exit 0
         ;;
-      v)
-        LOG_LVL=2
-        log_dbg "Script location: ${PATH_DIR}/${SCRIPT_NAME}"
-        ;;
       z) pkgs=("${PKGS_REQ[@]}" "${PKGS_ZSH[@]}") ;;
-      f)
-        pkgs=("${PKGS_REQ[@]}" "${PKGS_ZSH[@]}")
-        is_full=1
-        ;;
+      v) is_vim_plugins=1 ;;
       t) is_tmux_plugins=1 ;;
       c) tmux_color="${OPTARG}" ;;
       *)
@@ -88,8 +78,7 @@ function main()
     log_inf "  + Alternatively, the ./src/mk_tmux_conf.sh script can be used."
   fi
 
-  # exec
-  # ---------------------------------------------------------------------------
+  # exec -----------------------------------------------------------------------
   print_underlined "Setting fonts, packages and configs"
 
   log_inf "Adding fonts..."
@@ -119,7 +108,7 @@ function main()
         if is_cmd_set "vim"; then
           log_inf "[x] vim"
 
-          if [[ -z "${is_full}" ]]; then
+          if [[ -z "${is_vim_plugins}" ]]; then
             cp "${PATH_DOTFILES}/.vimrc" ~/
           else
             if is_cmd_set "curl"; then
@@ -183,6 +172,10 @@ function main()
         if is_cmd_set "zsh"; then
           log_inf "[x] zsh"
           log_inf "  + to set as default shell: chsh -s /usr/bin/zsh"
+          cp "${PATH_DOTFILES}/.zshrc" ~/
+
+          mkdir -p ~/.config/
+          cp "${PATH_DOTFILES}/starship.toml" ~/.config/
 
           if is_cmd_set "git"; then
             git clone --depth=1 $URL_ZSH_AS \
@@ -192,17 +185,7 @@ function main()
             git clone --depth=1 $URL_ZSH_SH \
               ~/.zsh/zsh-syntax-highlighting &>/dev/null || true
             log_inf "  + zsh-syntax-highlighting set"
-
-            if [[ -z "${is_full}" ]]; then
-              cp "${PATH_DOTFILES}/.zshrc" ~/
-            else
-              git clone --depth=1 $URL_P10K ~/powerlevel10k &>/dev/null || true
-              cp "${PATH_DOTFILES}/.zshrc-full" ~/.zshrc
-              cp "${PATH_DOTFILES}/.p10k.zsh" ~/
-              log_inf "  + p10k set, to cfg: p10k configure"
-            fi
           else
-            cp "${PATH_DOTFILES}/.zshrc" ~/
             log_inf "  + zsh plugins not set: 'git' not found (required)"
           fi
         else

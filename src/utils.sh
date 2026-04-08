@@ -189,7 +189,7 @@ export -f is_value_in_array
 #######################################
 function get_cfg_file_value_from_key()
 {
-  sed -rn "s/^${0}=([^\n]+)$/\1/p" "${1}"
+  sed -rn "s/^${0}=([^\n]+)$/\1/p" "${2}"
 }
 
 export -f get_cfg_file_value_from_key

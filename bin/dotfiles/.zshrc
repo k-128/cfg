@@ -58,8 +58,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # - https://zsh-manual.netlify.app/parameters#156-parameters-used-by-the-shell
 # -----------------------------------------------------------------------------
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=20000
 setopt hist_expire_dups_first # on history trim: target the oldest dups first
 setopt hist_ignore_dups       # ignore consecutive duplicate commands
 setopt hist_ignore_space      # ignore commands starting with a space
@@ -84,7 +84,7 @@ if [[ -x /usr/bin/dircolors ]]; then
   zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-set bell-style none
+unsetopt beep
 
 # _shape=3  # cursors: https://vt100.net/docs/vt510-rm/DECSCUSR
 # printf $'\e[%d q' "${_shape}"
@@ -159,4 +159,10 @@ if [[ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
   ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
   ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
+fi
+
+# Starship.rs: github.com/starship/starship
+ZLE_RPROMPT_INDENT=0 # Fix right padding (github.com/starship/starship/discussions/5395)
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
 fi

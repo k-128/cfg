@@ -9,10 +9,15 @@
 
   // GENERAL
   // ------------------------------------------------------------------------
-  "telemetry.telemetryLevel": "off",
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
   "search.useIgnoreFiles": true,
   "explorer.excludeGitIgnore": false,
   "explorer.confirmDelete": false,
+  "git.enabled": false,
+  "git.autoRepositoryDetection": false,
+  "git.autorefresh": false,
+  "telemetry.telemetryLevel": "off",
 
   // TERMINAL
   // ------------------------------------------------------------------------
@@ -25,16 +30,12 @@
   // - code.visualstudio.com/api/references/theme-color
   // - github.com/microsoft/vscode/blob/main/extensions/theme-defaults/
   // ------------------------------------------------------------------------
+  "breadcrumbs.enabled": false,
   // Fonts
   "editor.fontFamily": "Monaspace Krypton Frozen",
   "editor.fontSize": 12,
   "editor.fontWeight": "300",
   "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
-  // 
-  "window.commandCenter": false,
-  "window.menuBarVisibility": "toggle",
-  "window.titleBarStyle": "custom",
-  "breadcrumbs.enabled": false,
   "editor.wordWrap": "off",
   "editor.rulers": [80, 120],
   "editor.showFoldingControls": "always",
@@ -46,15 +47,20 @@
   "editor.scrollBeyondLastLine": true,
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.bracketPairColorization.enabled": true,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom",
+  "workbench.activityBar.location": "top",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.editor.enablePreview": true,
   "workbench.startupEditor": "none",
   "workbench.list.openMode": "singleClick",
   "workbench.sideBar.location": "right",
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Dark Modern",
   "workbench.colorCustomizations": {
-    "[Default Dark Modern]": {
+    "[*Dark Modern]": {
       "window.activeBorder": "#57534d",
       "window.inactiveBorder": "#171717",
       "titleBar.activeBackground": "#0c0a09",
@@ -175,23 +181,19 @@
   },
   "markdown.preview.fontFamily": "Monaspace Argon Frozen",
   "markdown.preview.fontSize": 11,
-  "markdown.preview.breaks": true,
   "markdown.preview.doubleClickToSwitchToEditor": false,
   "markdown.preview.markEditorSelection": false,
   "markdown.preview.scrollEditorWithPreview": false,
   "markdown.preview.scrollPreviewWithEditor": false,
+  "markdown.preview.breaks": true,
+  "markdown.styles": [],
   "notebook.markup.fontFamily": "Monaspace Krypton Frozen",
   "notebook.markup.fontSize": 11,
+  "notebook.insertToolbarLocation": "notebookToolbar",
 
   // EXTENSIONS
   // ------------------------------------------------------------------------
   "extensions.autoUpdate": false,
   "extensions.autoCheckUpdates": true,
   "extensions.ignoreRecommendations": true,
-  "chat.commandCenter.enabled": false,
-  "chat.agent.enabled": false,
-  "git.enabled": false,
-  "git.autoRepositoryDetection": false,
-  "git.autorefresh": false,
-  "notebook.insertToolbarLocation": "notebookToolbar"
 }
