@@ -96,7 +96,7 @@ alias history="history 0" # force complete history
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias l='ls -CF'
-alias la='ls -lAv'
+alias la='ls -lAvh'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
